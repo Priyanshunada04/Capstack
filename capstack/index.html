@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capstack — Find. Verify. Apply.</title>
+  <meta name="description" content="The only funding aggregator built around trust. 2,400+ verified opportunities for founders.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/views.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="money-bg">
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="container">
+      <a href="#" class="logo" data-view="landing">
+        <div class="logo-icon">$</div>
+        <span>Cap<span class="text-green">stack</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#" data-view="directory">Opportunities</a>
+        <a href="#" data-view="profile" class="auth-only founder-only">My Profile</a>
+        <a href="#" data-view="tracker" class="auth-only founder-only">Tracker</a>
+        <a href="#" data-view="investor" class="auth-only investor-only">Dashboard</a>
+        <a href="#" data-view="admin" class="auth-only admin-only">Admin</a>
+      </div>
+      <div class="nav-actions">
+        <div id="userMenu" class="user-menu hidden">
+          <button class="user-btn" id="userBtn">
+            <span class="user-avatar" id="userAvatar"></span>
+            <span class="user-name" id="userName"></span>
+            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown" id="userDropdown">
+            <div class="dropdown-header">
+              <span class="dropdown-avatar" id="dropdownAvatar"></span>
+              <div>
+                <p id="dropdownName"></p>
+                <p id="dropdownEmail" class="dropdown-email"></p>
+                <span id="userType" class="user-type"></span>
+              </div>
+            </div>
+            <div class="dropdown-links">
+              <a href="#" data-view="profile">My Profile</a>
+              <a href="#" data-view="tracker">Application Tracker</a>
+              <a href="#" data-view="directory">Browse Opportunities</a>
+              <a href="#" id="settingsLink">Settings</a>
+            </div>
+            <div class="dropdown-footer">
+              <a href="#" id="logoutBtn">Sign Out</a>
+            </div>
+          </div>
+        </div>
+        <button id="signInBtn" class="btn btn-primary">Sign In</button>
+        <button class="menu-toggle" id="menuToggle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="container">
+      <a href="#" data-view="directory">Opportunities</a>
+      <a href="#" data-view="profile" class="auth-only founder-only">My Profile</a>
+      <a href="#" data-view="tracker" class="auth-only founder-only">Tracker</a>
+      <a href="#" data-view="investor" class="auth-only investor-only">Dashboard</a>
+      <a href="#" data-view="admin" class="auth-only admin-only">Admin</a>
+      <button id="mobileSignInBtn" class="btn btn-primary w-full">Sign In / Sign Up</button>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main id="mainContent">
+    <!-- Landing Page (shown by default) -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="eyebrow animate-fade-in-up">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              2,400+ verified opportunities
+            </div>
+            <h1 class="animate-fade-in-up animate-delay-1">Stop wasting time.<br>Start <span class="gradient-text">finding</span> real funding.</h1>
+            <p class="animate-fade-in-up animate-delay-2">The only funding aggregator built around trust. Every opportunity is verified, dated, and reviewed by founders who've been there.</p>
+            <div class="hero-actions animate-fade-in-up animate-delay-3">
+              <button class="btn btn-primary animate-pulse-glow" data-view="directory">
+                Browse Opportunities
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+              <button class="btn btn-ghost" id="landingSignUp">
+                Create Free Account
+              </button>
+            </div>
+            <div class="hero-stats animate-fade-in-up animate-delay-4">
+              <div>
+                <p class="stat-value">2,400+</p>
+                <p class="stat-label">Verified opportunities</p>
+              </div>
+              <div>
+                <p class="stat-value">94%</p>
+                <p class="stat-label">Active & up-to-date</p>
+              </div>
+              <div>
+                <p class="stat-value">8h</p>
+                <p class="stat-label">Saved per founder / week</p>
+              </div>
+              <div>
+                <p class="stat-value">12K+</p>
+                <p class="stat-label">Founders using Capstack</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-cards animate-slide-in-right animate-delay-2">
+            <div class="floating-card animate-float" style="animation-delay: 0s;">
+              <div class="floating-card-header">
+                <div>
+                  <h4>EIC Accelerator 2026</h4>
+                  <p>European Innovation Council</p>
+                </div>
+                <span class="amount" style="color: var(--money-green); font-weight: 700;">€2.5M</span>
+              </div>
+              <div class="floating-card-tags">
+                <span class="badge badge-green">● Active</span>
+                <span class="tag-sm">Deep Tech</span>
+                <span class="tag-sm">EU</span>
+              </div>
+            </div>
+            <div class="floating-card animate-float" style="animation-delay: 0.5s;">
+              <div class="floating-card-header">
+                <div>
+                  <h4>Y Combinator S26</h4>
+                  <p>Y Combinator</p>
+                </div>
+                <span class="amount" style="color: var(--money-green); font-weight: 700;">$500K</span>
+              </div>
+              <div class="floating-card-tags">
+                <span class="badge badge-green">● Active</span>
+                <span class="tag-sm">Accelerator</span>
+                <span class="tag-sm">Global</span>
+              </div>
+            </div>
+            <div class="floating-card animate-float" style="animation-delay: 1s;">
+              <div class="floating-card-header">
+                <div>
+                  <h4>SBIR Phase I Grant</h4>
+                  <p>US Department of Commerce</p>
+                </div>
+                <span class="amount" style="color: var(--money-green); font-weight: 700;">$275K</span>
+              </div>
+              <div class="floating-card-tags">
+                <span class="badge badge-green">● Active</span>
+                <span class="tag-sm">Government</span>
+                <span class="tag-sm">USA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-primary);">
+      <div class="container">
+        <div class="section-header scroll-animate">
+          <p class="section-label">The Problem We're Solving</p>
+          <h2>Founders lose weeks.<br><span>Not hours — weeks.</span></h2>
+        </div>
+        <div class="pain-points-grid">
+          <div class="pain-card scroll-animate">
+            <span class="pain-icon animate-bounce">🕳️</span>
+            <h3>The Legitimacy Black Hole</h3>
+            <p>You spend 3 hours researching a grant, write the application, then discover it's invite-only. Or it closed two years ago. Or it never existed properly at all.</p>
+            <p class="pain-quote">"I applied to something I spent a week on. Turned out it was a dead programme." — Maya, SaaS Founder</p>
+          </div>
+          <div class="pain-card scroll-animate">
+            <span class="pain-icon animate-bounce" style="animation-delay: 0.3s;">🔄</span>
+            <h3>The Re-entry Trap</h3>
+            <p>Every application is a fresh copy-paste marathon. Company description. Team bios. Revenue metrics. Pitch summary. Over and over, for every programme you apply to.</p>
+            <p class="pain-quote">"I've written my company description 40 times this year. It's demoralising." — Tom, Fintech Founder</p>
+          </div>
+          <div class="pain-card scroll-animate">
+            <span class="pain-icon animate-bounce" style="animation-delay: 0.6s;">🗂️</span>
+            <h3>The Spreadsheet Chaos</h3>
+            <p>Tracking 10+ applications across bookmarks, email threads, and a spreadsheet that's already out of date. Deadlines get missed. Follow-ups fall through the cracks.</p>
+            <p class="pain-quote">"I genuinely forgot I'd applied to one accelerator. Found the rejection email 3 months later." — Priya, Deep Tech Founder</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header scroll-animate">
+          <p class="section-label">How Capstack Works</p>
+          <h2>Research once. Apply faster.</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card scroll-animate">
+            <p class="step-number">01</p>
+            <div class="step-icon animate-pulse-glow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3>Build your profile once</h3>
+            <p>Enter your startup details, team, traction, and pitch. It lives here permanently and powers everything else.</p>
+          </div>
+          <div class="step-card scroll-animate">
+            <p class="step-number">02</p>
+            <div class="step-icon animate-pulse-glow" style="animation-delay: 0.5s;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3>Discover verified opportunities</h3>
+            <p>Search 2,400+ opportunities filtered to your stage, sector, and geography. Every listing is verified and dated.</p>
+          </div>
+          <div class="step-card scroll-animate">
+            <p class="step-number">03</p>
+            <div class="step-icon animate-pulse-glow" style="animation-delay: 1s;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Trust the signal</h3>
+            <p>See verification badges, last-checked dates, and founder reviews before investing a single minute in an application.</p>
+          </div>
+          <div class="step-card scroll-animate">
+            <p class="step-number">04</p>
+            <div class="step-icon animate-pulse-glow" style="animation-delay: 1.5s;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Apply with pre-filled data</h3>
+            <p>Click Apply and your profile data auto-populates the form. Track applications in one dashboard with deadline alerts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-primary);">
+      <div class="container">
+        <div class="cta-box scroll-animate animate-pulse-glow">
+          <h2>Stop researching. Start applying.</h2>
+          <p>Join 12,000+ founders who use Capstack to cut their funding research time by 8 hours a week.</p>
+          <div class="cta-actions">
+            <button class="btn btn-primary animate-bounce" id="ctaSignUp">
+              Create Free Account
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <button class="btn btn-ghost" data-view="directory">
+              Browse Opportunities
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo" data-view="landing">
+              <div class="logo-icon">$</div>
+              <span>Cap<span class="text-green">stack</span></span>
+            </a>
+            <p class="footer-tagline">The only funding aggregator built around trust. Helping founders find real funding opportunities since 2024.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+              <a href="#" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Product</h4>
+              <ul>
+                <li><a href="#" data-view="directory">Browse Opportunities</a></li>
+                <li><a href="#" data-view="tracker">Application Tracker</a></li>
+                <li><a href="#" data-view="profile">Founder Profile</a></li>
+                <li><a href="#" data-view="investor">For Investors</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Funding Guide</a></li>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">API Docs</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Press Kit</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">GDPR</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Capstack Inc. All rights reserved. Made with 💚 for founders worldwide.</p>
+          <div class="footer-badges">
+            <span class="badge-sm">🔒 SOC 2 Compliant</span>
+            <span class="badge-sm">✓ Verified Data</span>
+            <span class="badge-sm">🌍 150+ Countries</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Auth Modal -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal modal-auth">
+      <div class="modal-header">
+        <div class="logo-sm">
+          <div class="logo-icon">$</div>
+          <span>Cap<span class="text-green">stack</span></span>
+        </div>
+        <button class="modal-close" id="closeAuthModal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="signin">Sign In</button>
+        <button class="auth-tab" data-tab="signup">Sign Up</button>
+      </div>
+      <div class="modal-body">
+        <button class="btn-google" id="googleSignInBtn">
+          <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Continue with Google
+        </button>
+        <div class="divider"><span>or</span></div>
+        <div class="user-type-select" id="userTypeSelect">
+          <button class="type-btn active" data-type="founder">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            <div>
+              <p class="type-label">Founder</p>
+              <p class="type-desc">Find & track funding</p>
+            </div>
+          </button>
+          <button class="type-btn" data-type="investor">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M10 9h4"/><path d="M10 13h4"/><path d="M10 17h4"/></svg>
+            <div>
+              <p class="type-label">Investor</p>
+              <p class="type-desc">Submit opportunities</p>
+            </div>
+          </button>
+        </div>
+        <form id="authForm" class="auth-form">
+          <div class="form-row" id="nameFields">
+            <div class="form-group">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="firstName" placeholder="First name" class="input">
+            </div>
+            <div class="form-group">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="lastName" placeholder="Last name" class="input">
+            </div>
+          </div>
+          <div class="form-group">
+            <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <input type="email" id="email" placeholder="Email address" class="input" required>
+          </div>
+          <div class="form-group">
+            <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <input type="password" id="password" placeholder="Password" class="input" required>
+          </div>
+          <div id="authError" class="auth-error hidden"></div>
+          <button type="submit" class="btn btn-primary btn-full" id="authSubmitBtn">Sign In</button>
+        </form>
+        <p class="auth-switch">
+          <span id="switchText">Don't have an account?</span>
+          <a href="#" id="switchLink">Sign up free</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Picker Modal -->
+  <div class="modal-overlay" id="googlePickerModal">
+    <div class="modal modal-google">
+      <div class="google-header">
+        <div class="google-brand">
+          <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          <span>Sign in with Google</span>
+        </div>
+        <h3>Choose an account</h3>
+        <p>to continue to Capstack</p>
+      </div>
+      <div class="google-accounts" id="googleAccounts"></div>
+      <button class="google-add" id="addGoogleAccount">
+        <div class="add-icon">+</div>
+        <span>Use another account</span>
+      </button>
+      <div class="google-footer">
+        <button class="btn btn-secondary" id="closeGooglePicker">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Onboarding Modal -->
+  <div class="modal-overlay" id="onboardingModal">
+    <div class="modal modal-onboarding">
+      <div class="onboarding-header">
+        <div class="step-dots" id="stepDots"></div>
+        <h2 id="onboardingTitle">Welcome to Capstack</h2>
+        <p id="onboardingSubtitle">Let's personalize your funding matches in 3 quick steps.</p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+      <div class="onboarding-body" id="onboardingBody"></div>
+      <div class="onboarding-footer">
+        <button class="btn btn-ghost" id="skipOnboarding">Skip for now</button>
+        <button class="btn btn-primary" id="nextOnboarding">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit Opportunity Modal -->
+  <div class="modal-overlay" id="submitModal">
+    <div class="modal modal-submit">
+      <div class="modal-header">
+        <div>
+          <h2>Submit an Opportunity</h2>
+          <p class="modal-subtitle">We'll review your submission within 48 hours before it goes live.</p>
+        </div>
+        <button class="modal-close" id="closeSubmitModal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body scrollable">
+        <form id="submitForm">
+          <div class="form-section">
+            <h3 class="section-title">Programme Details *</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Organisation Name</label>
+                <input type="text" name="org" placeholder="e.g. European Innovation Council" class="input" required>
+              </div>
+              <div class="form-group">
+                <label>Programme Name</label>
+                <input type="text" name="name" placeholder="e.g. EIC Accelerator 2027" class="input" required>
+              </div>
+              <div class="form-group">
+                <label>Funding Type</label>
+                <select name="type" class="input" required>
+                  <option value="">Select type...</option>
+                  <option value="Accelerator">Accelerator</option>
+                  <option value="Government Grant">Government Grant</option>
+                  <option value="VC / Angel">VC / Angel</option>
+                  <option value="Foundation">Foundation</option>
+                  <option value="Competition">Competition</option>
+                  <option value="Fellowship">Fellowship</option>
+                  <option value="Loan / Revenue Share">Loan / Revenue Share</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Geography</label>
+                <select name="geo" class="input" required>
+                  <option value="">Select geography...</option>
+                  <option value="Global">Global</option>
+                  <option value="USA">USA</option>
+                  <option value="Europe">Europe</option>
+                  <option value="UK">UK</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Africa">Africa</option>
+                  <option value="Latin America">Latin America</option>
+                  <option value="Middle East">Middle East</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Funding Amount</label>
+                <input type="text" name="amount" placeholder="e.g. Up to €2.5M" class="input" required>
+              </div>
+              <div class="form-group">
+                <label>Application Deadline</label>
+                <input type="date" name="deadline" class="input" required>
+              </div>
+              <div class="form-group full-width">
+                <label>Application URL</label>
+                <input type="url" name="url" placeholder="https://..." class="input" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-section">
+            <label>Eligible Stages *</label>
+            <div class="stage-tags" id="stageTags">
+              <button type="button" class="tag" data-stage="Pre-seed">Pre-seed</button>
+              <button type="button" class="tag" data-stage="Seed">Seed</button>
+              <button type="button" class="tag" data-stage="Series A">Series A</button>
+              <button type="button" class="tag" data-stage="Series B+">Series B+</button>
+              <button type="button" class="tag" data-stage="Any">Any</button>
+            </div>
+          </div>
+          <div class="form-section">
+            <h3 class="section-title">Description</h3>
+            <div class="form-group">
+              <label>Short Description * <span>(shown in directory)</span></label>
+              <textarea name="desc" placeholder="One compelling paragraph — what is this, and why should founders care?" maxlength="280" rows="3" class="input" required></textarea>
+              <span class="char-count">0 / 280</span>
+            </div>
+            <div class="form-group">
+              <label>Full Description</label>
+              <textarea name="fullDesc" placeholder="Detailed description, process, timeline, what makes this opportunity unique..." rows="4" class="input"></textarea>
+            </div>
+          </div>
+          <div class="form-section">
+            <h3 class="section-title">Eligibility Criteria</h3>
+            <p class="section-hint">Add criteria with ✓ for requirements and ✗ for exclusions.</p>
+            <div id="eligibilityList"></div>
+            <button type="button" class="btn btn-ghost" id="addCriterion">+ Add Criterion</button>
+          </div>
+          <div class="form-section">
+            <h3 class="section-title">Contact & Discovery (Optional)</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Contact Email</label>
+                <input type="email" name="contact" placeholder="applications@yourorg.com" class="input">
+              </div>
+              <div class="form-group">
+                <label>Organisation Website</label>
+                <input type="url" name="website" placeholder="https://yourorg.com" class="input">
+              </div>
+              <div class="form-group full-width">
+                <label>Tags <span>(comma-separated)</span></label>
+                <input type="text" name="tags" placeholder="e.g. Deep Tech, Climate, Non-dilutive" class="input">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelSubmit">Cancel</button>
+        <button class="btn btn-investor" id="confirmSubmit">Submit for Review →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reject Modal -->
+  <div class="modal-overlay" id="rejectModal">
+    <div class="modal modal-reject">
+      <div class="modal-header">
+        <h3>Reject Submission</h3>
+        <p class="modal-subtitle">Select a reason — this will be sent to the submitter.</p>
+      </div>
+      <div class="modal-body">
+        <div class="reject-reasons" id="rejectReasons"></div>
+        <div class="form-group">
+          <label class="section-title">Custom Note (Optional)</label>
+          <textarea id="rejectNote" placeholder="Add any additional context for the submitter..." rows="3" class="input"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelReject">Cancel</button>
+        <button class="btn btn-danger" id="confirmReject">Confirm Rejection</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toastIcon"></span>
+    <span class="toast-message" id="toastMessage"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/google.js"></script>
+  <script src="assets/js/onboarding.js"></script>
+  <script src="assets/js/directory.js"></script>
+  <script src="assets/js/tracker.js"></script>
+  <script src="assets/js/investor.js"></script>
+  <script src="assets/js/admin.js"></script>
+  <script src="assets/js/mobile.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

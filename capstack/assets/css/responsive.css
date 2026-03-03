@@ -1,0 +1,569 @@
+/* ============================================
+   Capstack - Responsive Stylesheet
+   Mobile breakpoints: 900px, 600px, 380px
+   ============================================ */
+
+/* ============================================
+   Tablet (max-width: 900px)
+   ============================================ */
+
+@media (max-width: 900px) {
+  /* Navigation */
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* Directory Layout */
+  .directory-layout {
+    flex-direction: column;
+  }
+  
+  .filters-sidebar {
+    width: 100%;
+    display: none;
+  }
+  
+  .filters-sidebar.open {
+    display: block;
+  }
+  
+  /* Kanban Board */
+  .kanban-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Admin Layout */
+  .admin-layout {
+    flex-direction: column;
+  }
+  
+  .admin-sidebar {
+    width: 100%;
+  }
+  
+  .admin-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  
+  .admin-nav-item {
+    white-space: nowrap;
+  }
+  
+  /* Info Grid */
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Form Grid */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-grid .full-width {
+    grid-column: span 1;
+  }
+  
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-grid-2 .full-width {
+    grid-column: span 1;
+  }
+  
+  /* Steps Grid */
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Trust Grid */
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* User Table */
+  .user-table {
+    font-size: 0.875rem;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 12px;
+  }
+  
+  /* CTA Box */
+  .cta-box {
+    padding: 48px 32px;
+  }
+}
+
+/* ============================================
+   Mobile (max-width: 600px)
+   ============================================ */
+
+@media (max-width: 600px) {
+  /* Container */
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Hero */
+  .hero {
+    padding: 48px 0 80px;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-stats {
+    gap: 24px;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  /* Section */
+  .section {
+    padding: 64px 0;
+  }
+  
+  .section h2 {
+    font-size: 1.75rem;
+  }
+  
+  /* Pain Points */
+  .pain-points-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pain-card {
+    padding: 24px;
+  }
+  
+  /* Steps */
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .step-card {
+    padding: 24px;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    flex-direction: column;
+  }
+  
+  .filter-btn {
+    justify-content: center;
+  }
+  
+  /* Opportunity Cards */
+  .opportunity-card-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .opp-logo {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+  
+  .opp-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .opp-amount {
+    font-size: 1.125rem;
+  }
+  
+  /* Detail Page */
+  .detail-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .detail-logo {
+    width: 64px;
+    height: 64px;
+    font-size: 2rem;
+  }
+  
+  .detail-title-group h1 {
+    font-size: 1.5rem;
+  }
+  
+  .detail-actions {
+    flex-direction: column;
+  }
+  
+  .detail-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  /* Profile */
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-actions {
+    justify-content: center;
+  }
+  
+  /* Kanban */
+  .kanban-board {
+    grid-template-columns: 1fr;
+  }
+  
+  .kanban-legend {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Stats Grid */
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Submission Cards */
+  .submission-header {
+    flex-direction: column;
+  }
+  
+  .submission-stats {
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  /* Admin Actions */
+  .admin-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  /* User Table - Card View */
+  .user-table thead {
+    display: none;
+  }
+  
+  .user-table tr {
+    display: block;
+    padding: 16px;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    margin-bottom: 12px;
+  }
+  
+  .user-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border: none;
+  }
+  
+  .user-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  
+  /* CTA Box */
+  .cta-box {
+    padding: 32px 24px;
+  }
+  
+  .cta-box h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+  }
+  
+  .cta-actions .btn {
+    width: 100%;
+  }
+  
+  /* Modals */
+  .modal {
+    max-height: 95vh;
+    margin: 8px;
+  }
+  
+  .modal-body {
+    padding: 16px;
+  }
+  
+  .modal-footer {
+    padding: 12px 16px;
+  }
+  
+  /* User Type Select */
+  .user-type-select {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Form Row */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Selection Tags */
+  .selection-tags {
+    gap: 6px;
+  }
+  
+  .selection-tag {
+    padding: 8px 12px;
+    font-size: 0.8125rem;
+  }
+  
+  /* Stage Cards */
+  .stage-card {
+    padding: 12px;
+  }
+  
+  /* Eligibility */
+  .eligibility-row {
+    flex-wrap: wrap;
+  }
+  
+  .eligibility-toggle {
+    order: -1;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  /* Toast */
+  .toast {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+/* ============================================
+   Small Mobile (max-width: 380px)
+   ============================================ */
+
+@media (max-width: 380px) {
+  /* Typography */
+  html {
+    font-size: 14px;
+  }
+  
+  /* Hero */
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  /* Section */
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Cards */
+  .card,
+  .detail-card,
+  .section-card {
+    padding: 20px;
+  }
+  
+  /* Step Cards */
+  .step-number {
+    font-size: 2rem;
+  }
+  
+  /* Kanban Legend */
+  .kanban-legend {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Stats */
+  .stat-card .value {
+    font-size: 1.5rem;
+  }
+  
+  /* Badges */
+  .badge {
+    padding: 3px 8px;
+    font-size: 0.625rem;
+  }
+  
+  .tag-sm {
+    padding: 3px 8px;
+    font-size: 0.6875rem;
+  }
+  
+  /* Tags in cards */
+  .opp-meta {
+    gap: 4px;
+  }
+  
+  /* Modal */
+  .modal-header {
+    padding: 16px;
+  }
+  
+  .onboarding-header {
+    padding: 20px;
+  }
+  
+  .onboarding-footer {
+    padding: 12px 20px;
+  }
+  
+  /* User Menu */
+  .user-name {
+    display: none;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 1rem;
+  }
+  
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 10px 16px;
+  }
+  
+  /* Search Input */
+  .search-input {
+    padding: 12px 12px 12px 40px;
+  }
+  
+  /* Filter Button */
+  .filter-btn {
+    padding: 12px 16px;
+  }
+  
+  /* Activity Item */
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .activity-time {
+    align-self: flex-end;
+  }
+  
+  /* Floating Cards (hidden on small mobile) */
+  .floating-card {
+    display: none;
+  }
+}
+
+/* ============================================
+   Touch Device Optimizations
+   ============================================ */
+
+@media (pointer: coarse) {
+  /* Larger touch targets */
+  .btn,
+  .nav-links a,
+  .filter-option,
+  .tag,
+  .selection-tag,
+  .stage-card,
+  .reject-reason {
+    min-height: 44px;
+  }
+  
+  /* Remove hover effects that don't work on touch */
+  .card:hover,
+  .opportunity-card:hover,
+  .step-card:hover,
+  .pain-card:hover {
+    transform: none;
+  }
+  
+  /* Always show kanban card actions on touch */
+  .kanban-card-actions {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .navbar,
+  .mobile-menu,
+  .modal-overlay,
+  .toast,
+  .menu-toggle,
+  .btn {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .card,
+  .detail-card,
+  .section-card {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+}
