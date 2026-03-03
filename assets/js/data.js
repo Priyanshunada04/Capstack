@@ -52,7 +52,7 @@ const OPPORTUNITIES = [
       { name: 'David T.', rating: 4, date: 'Jan 2026', text: 'Business innovation component matters as much as tech.' }
     ],
     isNew: false,
-    applyUrl: 'https://ec.europa.eu/info/funding-tenders'
+    applyUrl: 'https://eic.ec.europa.eu/eic-fund/about-eic-fund_en'
   },
   {
     id: 2,
