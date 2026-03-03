@@ -189,9 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
 - Safari 13+
 - Edge 80+
 
-## 📄 License
-
-MIT License — feel free to use for personal or commercial projects.
 
 ## 🙏 Credits
 
